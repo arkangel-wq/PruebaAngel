@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "serverName": {
-        "value": "GEN-UNIQUE"
+        "value": "DemoServer"
       },
       "administratorLogin": {
-        "value": "GEN-UNIQUE"
+        "value": "cepo"
       },
       "administratorLoginPassword": {
-        "value": "GEN-PASSWORD"
+        "value": "P@ssw0rd"
       }
     }
   }
