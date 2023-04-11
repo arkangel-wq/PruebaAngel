@@ -1,15 +1,23 @@
 name: Deploy Bicep files $(Build.BuildId)
 
-trigger: none
-# - main
-
-variables:
- resourceGroupName: 'Demo'
- location: 'southcentralus'
- templateFile: 'Demo/main.bicep'  
-
+trigger:
+ batch: true
+ branches:
+  include:
+    - main
+   
 pool:
   vmImage: 'ubuntu-latest'
+
+variables:
+- name : templateFilePath
+  value: 'Demo/main.bicep'
+- name : parametersFolderPath
+  value: 'Demo/azuredeploy.parameters.json'
+resourceGroupName: 'Demo'
+ location: 'southcentralus'
+
+ 
 
 stages:
 - stage: preDeploy
@@ -48,6 +56,7 @@ stages:
           az group create --name $(resourceGroupName) --location $(location)
           az deployment group what-if --resource-group $(resourceGroupName) \
             --template-file $(templateFile) \
+            --parameters @azuredeploy.parameters.json
 
 - stage: deployBicep
   jobs:
