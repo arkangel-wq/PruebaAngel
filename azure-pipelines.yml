@@ -5,7 +5,7 @@ trigger: none
 
 variables:
   resourceGroupName: 'Demo'
-  location: 'South Central US'
+  location: 'southcentralus'
   templateFile: 'Demo/main.bicep'
 
 pool:
