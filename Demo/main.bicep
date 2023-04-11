@@ -1,8 +1,8 @@
 @description('The name of the SQL logical server.')
-param serverName string 
+param serverName string
 
 @description('The name of the SQL Database.')
-param sqlDBName string 
+param sqlDBName string
 
 @description('Location for all resources.')
 param location string = resourceGroup().location
@@ -28,7 +28,8 @@ resource sqlDB 'Microsoft.Sql/servers/databases@2022-05-01-preview' = {
   name: sqlDBName
   location: location
   sku: {
-    name: 'Standard'
-    tier: 'Standard'
+    name: 'Basic'
+    tier: 'Basic'
   }
 }
+
