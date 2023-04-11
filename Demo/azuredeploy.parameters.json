@@ -10,6 +10,9 @@
       },
       "administratorLoginPassword": {
         "value": "P@ssw0rd"
+      },
+      "sqlDBName": {
+        "value": "cepo_public"
       }
-    }
+    
   }
