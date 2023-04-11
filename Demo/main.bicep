@@ -1,8 +1,8 @@
 @description('The name of the SQL logical server.')
-param serverName string = uniqueString('sql', resourceGroup().id)
+param serverName string 
 
 @description('The name of the SQL Database.')
-param sqlDBName string = 'SampleDB'
+param sqlDBName string 
 
 @description('Location for all resources.')
 param location string = resourceGroup().location
