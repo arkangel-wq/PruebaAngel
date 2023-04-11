@@ -14,9 +14,10 @@ variables:
   value: 'Demo/main.bicep'
 - name : parametersFolderPath
   value: 'Demo/azuredeploy.parameters.json'
-  
-resourceGroupName: 'Demo'
- location: 'southcentralus'
+- name : GrupoRecursos
+  value: 'Demo'
+- name:  location
+  value: 'southcentralus'
 
  
 
@@ -54,9 +55,9 @@ stages:
         scriptLocation: 'inlineScript'
         inlineScript: |
           az --version
-          az group create --name $(resourceGroupName) --location $(location)
-          az deployment group what-if --resource-group $(resourceGroupName) \
-            --template-file $(templateFile) \
+          az group create --name $(GrupoRecursos) --location $(location)
+          az deployment group what-if --resource-group $(GrupoRecursos) \
+            --template-file $(templateFilePath) \
             --parameters @azuredeploy.parameters.json
 
 - stage: deployBicep
@@ -88,6 +89,6 @@ stages:
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
         inlineScript: |
-          az deployment group create --resource-group $(resourceGroupName) \
-            --template-file $(templateFile) \
-            --parameters webAppName=$(webAppName)
+          az deployment group create --resource-group $(GrupoRecursos) \
+            --template-file $(templateFilePath) \
+            --parameters @azuredeploy.parameters.json
