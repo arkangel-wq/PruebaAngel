@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "serverName": {
-        "value": "DemoServer2023"
+        "value": "DemosysneServer2023"
       },
       "administratorLogin": {
         "value": "cepo"
