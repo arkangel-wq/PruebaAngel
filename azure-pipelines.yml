@@ -4,9 +4,9 @@ trigger: none
 # - main
 
 variables:
-  resourceGroupName: 'Demo'
-  location: 'southcentralus'
-  templateFile: 'Demo/main.bicep'
+ resourceGroupName: 'Demo'
+ location: 'southcentralus'
+ templateFile: 'Demo/main.bicep'  
 
 pool:
   vmImage: 'ubuntu-latest'
