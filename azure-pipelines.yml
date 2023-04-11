@@ -58,7 +58,7 @@ stages:
           az group create --name $(GrupoRecursos) --location $(location)
           az deployment group what-if --resource-group $(GrupoRecursos) \
             --template-file $(templateFilePath) \
-            --parameters @azuredeploy.parameters.json
+            --parameters $(parametersFolderPath)
 
 - stage: deployBicep
   jobs:
@@ -91,4 +91,4 @@ stages:
         inlineScript: |
           az deployment group create --resource-group $(GrupoRecursos) \
             --template-file $(templateFilePath) \
-            --parameters @azuredeploy.parameters.json
+            --parameters $(parametersFolderPath) 
