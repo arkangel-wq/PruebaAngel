@@ -14,6 +14,7 @@ variables:
   value: 'Demo/main.bicep'
 - name : parametersFolderPath
   value: 'Demo/azuredeploy.parameters.json'
+  
 resourceGroupName: 'Demo'
  location: 'southcentralus'
 
